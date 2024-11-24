@@ -1,4 +1,4 @@
-package com.example.shopping_flutter_uikit
+package com.obong.shopping_uikit
 
 import io.flutter.embedding.android.FlutterActivity
 

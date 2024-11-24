@@ -1,5 +1,6 @@
 // widgets/bottom_nav_bar.dart
 import 'package:flutter/material.dart';
+import 'package:shopping_flutter_uikit/modules/dashboard/dashboard.dart';
 
 class BottomNavBar extends StatefulWidget {
   const BottomNavBar({super.key});
@@ -12,7 +13,10 @@ class _BottomNavBarState extends State<BottomNavBar> {
   int _selectedIndex = 0;
 
   static final List<Widget> _pages = <Widget>[
-    //fill your page here
+    const Dashboard(), // Home Page
+    const Dashboard(), // Search Page
+    const Dashboard(), // Cart Page
+    const Dashboard(), // Profile Page
   ];
 
   void _onItemTapped(int index) {

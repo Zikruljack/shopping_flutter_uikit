@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:shopping_flutter_uikit/core/constants/colors.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   const CustomAppBar({
@@ -6,7 +7,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     this.height,
     this.width,
     this.leading,
-    this.trailing,
     this.title,
     this.actions,
   });
@@ -15,7 +15,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   final double? width;
   final Widget? title;
   final Icon? leading;
-  final Icon? trailing;
   final List<Widget>? actions;
 
   @override
@@ -28,12 +27,17 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
     return AppBar(
       title: title,
       leading: leading,
-      backgroundColor: Colors.transparent,
+      backgroundColor: ColorConstants.primaryColor,
       actions: <Widget>[
-        // trailing ?? const Icon(Icons.menu),
         IconButton(
-          icon: const Icon(Icons.shopping_cart.),
-          onPressed: (){},
+          icon: const Icon(Icons.notifications_active_outlined),
+          color: ColorConstants.ligthBackgroundColor,
+          onPressed: () {},
+        ),
+        IconButton(
+          icon: const Icon(Icons.shopping_cart_outlined),
+          color: ColorConstants.ligthBackgroundColor,
+          onPressed: () {},
         )
       ],
     );

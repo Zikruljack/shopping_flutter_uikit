@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:shopping_flutter_uikit/features/dashboard/dashboard.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:shopping_flutter_uikit/routes/app_pages.dart';
+import 'package:shopping_flutter_uikit/routes/app_router.dart';
 
 void main() {
   runApp(const MyApp());
@@ -11,13 +14,16 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
-      home: const Dashboard(),
+    return ScreenUtilInit(
+      designSize: const Size(360, 290),
+      builder: (_, child) {
+        return GetMaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: child,
+          initialRoute: AppRouter.auth,
+          getPages: AppPages.routes,
+        );
+      },
     );
   }
 }
